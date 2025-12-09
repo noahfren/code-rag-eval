@@ -1,0 +1,2 @@
+[] Improve recall metric to cover % of relevant lines from ground truth answer block that are returned in the RAG results
+[] Create good way to organzie/track/visualize code-rag performance across iterations
