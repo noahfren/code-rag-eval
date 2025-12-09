@@ -1,7 +1,4 @@
-from __future__ import annotations
-
 from pathlib import Path
-from typing import Optional
 
 from rag_eval.interfaces import RAGSystem
 from rag_eval.metrics.core import compute_metrics
@@ -20,7 +17,7 @@ class BenchmarkRunner:
     def run(
         self,
         dataset_path: str | Path,
-        top_k: Optional[int] = None,
+        top_k: int | None = None,
         overlap_threshold: float = 0.5,
     ) -> EvaluationReport:
         dataset = load_dataset(dataset_path)

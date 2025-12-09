@@ -1,5 +1,4 @@
 from dataclasses import dataclass, field
-from typing import List, Optional
 
 
 @dataclass
@@ -13,19 +12,19 @@ class GroundTruthChunk:
 class Query:
     id: str
     text: str
-    ground_truth: List[GroundTruthChunk] = field(default_factory=list)
+    ground_truth: list[GroundTruthChunk] = field(default_factory=list)
 
 
 @dataclass
 class RepoSpec:
     url: str
-    commit: Optional[str] = None
+    commit: str | None = None
 
 
 @dataclass
 class Dataset:
     name: str
     repo: RepoSpec
-    queries: List[Query]
+    queries: list[Query]
     top_k: int = 10
 

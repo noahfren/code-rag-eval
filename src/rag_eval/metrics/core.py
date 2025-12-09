@@ -1,7 +1,5 @@
-from __future__ import annotations
-
 import math
-from typing import Iterable, List, Sequence
+from typing import Sequence
 
 from rag_eval.models.chunk import CodeChunk
 from rag_eval.models.dataset import GroundTruthChunk

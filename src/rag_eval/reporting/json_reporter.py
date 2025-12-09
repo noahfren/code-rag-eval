@@ -1,12 +1,10 @@
-from __future__ import annotations
-
 import json
-from typing import Any, Dict
+from typing import Any
 
 from rag_eval.models.results import EvaluationReport, QueryResult
 
 
-def _chunk_to_dict(chunk) -> Dict[str, Any]:
+def _chunk_to_dict(chunk) -> dict[str, Any]:
     return {
         "file_path": chunk.file_path,
         "start_line": chunk.start_line,
@@ -16,7 +14,7 @@ def _chunk_to_dict(chunk) -> Dict[str, Any]:
     }
 
 
-def _query_result_to_dict(result: QueryResult) -> Dict[str, Any]:
+def _query_result_to_dict(result: QueryResult) -> dict[str, Any]:
     return {
         "id": result.query.id,
         "text": result.query.text,

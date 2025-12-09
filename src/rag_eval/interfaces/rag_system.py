@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from typing import List
 
 from rag_eval.models.chunk import CodeChunk
 
@@ -13,7 +12,7 @@ class RAGSystem(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def query(self, query: str, top_k: int = 10) -> List[CodeChunk]:
+    def query(self, query: str, top_k: int = 10) -> list[CodeChunk]:
         """Query the RAG system and return ranked code chunks."""
         raise NotImplementedError
 

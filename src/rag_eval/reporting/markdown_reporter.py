@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from rag_eval.models.results import EvaluationReport, QueryResult
 
 

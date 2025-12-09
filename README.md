@@ -2,6 +2,8 @@
 
 A small, Python-based harness for benchmarking codebase RAG systems against ground-truth datasets on public repositories.
 
+Requires Python 3.10 or newer.
+
 ## Features
 - Modular `RAGSystem` interface with ingestion and query hooks
 - Dataset-driven evaluation (YAML) with repo pinning to commits

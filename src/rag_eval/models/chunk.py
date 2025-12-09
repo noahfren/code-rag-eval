@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass
@@ -10,7 +9,7 @@ class CodeChunk:
     start_line: int
     end_line: int
     content: str = ""
-    score: Optional[float] = None
+    score: float | None = None
 
     def __post_init__(self) -> None:
         if self.start_line < 1:

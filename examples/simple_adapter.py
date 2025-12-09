@@ -1,8 +1,4 @@
-from __future__ import annotations
-
 from pathlib import Path
-from typing import List
-
 from rag_eval.interfaces import RAGSystem
 from rag_eval.models import CodeChunk
 
@@ -27,7 +23,7 @@ class SimpleGrepRAG(RAGSystem):
                 continue
             self._files.append((path, text.splitlines()))
 
-    def query(self, query: str, top_k: int = 10) -> List[CodeChunk]:
+    def query(self, query: str, top_k: int = 10) -> list[CodeChunk]:
         if self.repo_path is None:
             raise RuntimeError("ingest() must be called before query().")
 

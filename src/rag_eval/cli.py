@@ -1,8 +1,5 @@
-from __future__ import annotations
-
 import importlib
 from pathlib import Path
-from typing import Optional, Type
 
 import typer
 from rich.console import Console
@@ -26,7 +23,7 @@ def _load_adapter(adapter_spec: str) -> RAGSystem:
     except ModuleNotFoundError as exc:
         raise typer.BadParameter(f"Module not found: {module_name}") from exc
     try:
-        adapter_cls: Type[RAGSystem] = getattr(module, class_name)
+        adapter_cls: type[RAGSystem] = getattr(module, class_name)
     except AttributeError as exc:
         raise typer.BadParameter(f"Class '{class_name}' not found in '{module_name}'") from exc
     if not issubclass(adapter_cls, RAGSystem):
@@ -41,7 +38,7 @@ def run(  # type: ignore[override]
     top_k: int = typer.Option(10, help="Top-K to request from the adapter"),
     overlap_threshold: float = typer.Option(0.5, help="Line overlap threshold for matches"),
     cache_dir: Path = typer.Option(Path(".rag_eval_cache"), help="Where to cache cloned repos"),
-    output: Optional[Path] = typer.Option(None, help="Optional path to write report"),
+    output: Path | None = typer.Option(None, help="Optional path to write report"),
     fmt: str = typer.Option("json", help="Report format: json|md"),
 ) -> None:
     """Run a benchmark for the given dataset and adapter."""

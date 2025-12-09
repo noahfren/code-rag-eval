@@ -7,7 +7,7 @@ name = "rag-eval"
 version = "0.1.0"
 description = "Codebase RAG evaluation harness"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [{ name = "Code RAG Eval" }]
 dependencies = [
   "typer>=0.12",
