@@ -1,0 +1,19 @@
+name: "micrograd-sample"
+repo:
+  url: "https://github.com/karpathy/micrograd.git"
+  commit: "c911406e5ace8742e5841a7e0df113ecb5d54685"
+top_k: 5
+queries:
+  - id: "q1"
+    text: "How does micrograd perform backpropagation?"
+    ground_truth:
+      - file_path: "micrograd/engine.py"
+        start_line: 54
+        end_line: 71
+  - id: "q2"
+    text: "Where is the ReLU activation defined in micrograd?"
+    ground_truth:
+      - file_path: "micrograd/engine.py"
+        start_line: 45
+        end_line: 52
+
